@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en" id="home">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admissions | Martins School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="index.html">
+        <div class="nav-logo-mark">MS</div>
+        <div>
+          <div class="nav-logo-text">Martins School</div>
+          <div class="nav-logo-sub">Montessori &amp; Secondary</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="montessori.html">Montessori</a>
+        <a href="secondary.html">Secondary</a>
+        <a href="admissions.html" class="active">Admissions</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <!-- Keep this -->
+      <div class="nav-search">
+        <input
+          type="text"
+          class="nav-search-input"
+          placeholder="Search..."
+          id="nav-search-input"
+        />
+        <button class="nav-search-btn" aria-label="Search" id="nav-search-btn">
+          🔍
+        </button>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="page-anim">
+      <div class="page-hero hero-admissions">
+        <div class="page-hero-breadcrumb">
+          <a href="index.html">Home</a> / Admissions
+        </div>
+        <h1>Apply to<br />Martins School</h1>
+        <p>
+          We look forward to welcoming your child into our community. Here's
+          everything you need to know.
+        </p>
+      </div>
+
+      <section>
+        <!-- Notice banner -->
+        <div class="notice-banner">
+          <div class="notice-icon">📣</div>
+          <p>
+            <strong>Admissions for 2025–2026 are now open.</strong> Applications
+            close 30 November 2025 for Montessori and 31 January 2026 for
+            Secondary. Spaces are limited — early application is strongly
+            encouraged.
+          </p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <button
+            class="tab-btn active"
+            onclick="switchTab(this, 'tab-process')"
+          >
+            How It Works
+          </button>
+          <button class="tab-btn" onclick="switchTab(this, 'tab-apply')">
+            Apply Online
+          </button>
+          <button class="tab-btn" onclick="switchTab(this, 'tab-dates')">
+            Key Dates
+          </button>
+          <button class="tab-btn" onclick="switchTab(this, 'tab-fees')">
+            Fees
+          </button>
+          <button class="tab-btn" onclick="switchTab(this, 'tab-faqs')">
+            FAQs
+          </button>
+        </div>
+
+        <!-- Tab 1: Process -->
+        <div class="tab-content active" id="tab-process">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 4rem;
+              align-items: start;
+            "
+          >
+            <div>
+              <div class="section-label">Admissions Process</div>
+              <div class="section-title" style="margin-bottom: 2rem">
+                Five Simple Steps
+              </div>
+              <div class="steps-timeline">
+                <div class="step-row">
+                  <div class="step-num-col">
+                    <div class="step-num">1</div>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <h3>Submit Your Application</h3>
+                    <p>
+                      Complete the online form with your child's details,
+                      academic records, and required documents. A non-refundable
+                      processing fee applies.
+                    </p>
+                  </div>
+                </div>
+                <div class="step-row">
+                  <div class="step-num-col">
+                    <div class="step-num">2</div>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <h3>Entrance Assessment</h3>
+                    <p>
+                      Shortlisted applicants are invited for an age-appropriate
+                      academic and cognitive assessment. Montessori applicants
+                      have an observation session.
+                    </p>
+                  </div>
+                </div>
+                <div class="step-row">
+                  <div class="step-num-col">
+                    <div class="step-num">3</div>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <h3>Family Interview</h3>
+                    <p>
+                      A friendly meeting with the Admissions Officer and/or Head
+                      of School to understand your child's needs, interests, and
+                      family values.
+                    </p>
+                  </div>
+                </div>
+                <div class="step-row">
+                  <div class="step-num-col">
+                    <div class="step-num">4</div>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <h3>Admission Decision</h3>
+                    <p>
+                      Offers are sent within two weeks of the interview. A place
+                      is secured upon acceptance and payment of the required
+                      deposit.
+                    </p>
+                  </div>
+                </div>
+                <div class="step-row">
+                  <div class="step-num-col"><div class="step-num">5</div></div>
+                  <div class="step-content">
+                    <h3>Welcome to Martins School!</h3>
+                    <p>
+                      You'll receive an orientation pack, school calendar,
+                      uniform guide, and all you need for a smooth first day.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- What to bring -->
+            <div>
+              <div class="section-label">Required Documents</div>
+              <div
+                class="section-title"
+                style="font-size: 1.6rem; margin-bottom: 1.25rem"
+              >
+                What to Prepare
+              </div>
+              <div class="features-list">
+                <div class="feature-row">
+                  <div class="feature-dot"></div>
+                  <div>
+                    <h4>Birth Certificate</h4>
+                    <p>
+                      Original or certified copy of the child's birth
+                      certificate.
+                    </p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-dot"></div>
+                  <div>
+                    <h4>Most Recent Academic Record</h4>
+                    <p>
+                      Latest school report or transcript (not required for
+                      Toddler).
+                    </p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-dot"></div>
+                  <div>
+                    <h4>Passport Photographs</h4>
+                    <p>
+                      Two recent passport-size photographs of the applicant.
+                    </p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-dot"></div>
+                  <div>
+                    <h4>School Reference Letter</h4>
+                    <p>
+                      A reference from the child's current or most recent school
+                      (Secondary applicants).
+                    </p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-dot"></div>
+                  <div>
+                    <h4>Medical / Health Information</h4>
+                    <p>
+                      Any relevant medical conditions, allergies, or special
+                      educational needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Application Form -->
+        <div class="tab-content" id="tab-apply">
+          <div class="form-section">
+            <h2>Online Application Form</h2>
+            <form id="application-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Child's First name & Middle name *</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="e.g. Ibrahim Atanda"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Child's Last name *</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="e.g. Akinwunmi"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Date of Birth *</label>
+                  <input type="date" name="dob" required />
+                </div>
+                <div class="form-group">
+                  <label>Gender *</label>
+                  <select name="gender" required>
+                    <option value="">Select…</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Prefer not to say</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Parent / Guardian Name *</label>
+                  <input
+                    type="text"
+                    name="parentName"
+                    placeholder="Full name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Relationship to Child *</label>
+                  <select name="relationship">
+                    <option>Mother</option>
+                    <option>Father</option>
+                    <option>Guardian</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Parent / Guardian Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="parent@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Phone Number *</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+234 …"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Programme Applying For *</label>
+                  <select name="programme" required>
+                    <option value="">Select programme…</option>
+                    <option>Montessori — Toddler (18 months – 3 yrs)</option>
+                    <option>Montessori — Preschool (3 – 5 yrs)</option>
+                    <option>Montessori — Kindergarten (5 – 6 yrs)</option>
+                    <option>Secondary — JSS1</option>
+                    <option>Secondary — JSS2</option>
+                    <option>Secondary — JSS3</option>
+                    <option>Secondary — SS1</option>
+                    <option>Secondary — SS2</option>
+                    <option>Secondary — SS3</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Entry Year *</label>
+                  <select name="entryYear">
+                    <option>2025–2026</option>
+                    <option>2026–2027</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row full">
+                <div class="form-group">
+                  <label>Previous School (if applicable)</label>
+                  <input
+                    type="text"
+                    name="prevSchool"
+                    placeholder="Name of previous school"
+                  />
+                </div>
+              </div>
+              <div class="form-row full">
+                <div class="form-group">
+                  <label
+                    >Special Educational Needs or Medical Information</label
+                  >
+                  <textarea
+                    name="needs"
+                    placeholder="Please share any relevant information that will help us support your child…"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="form-row full">
+                <div class="form-group">
+                  <label>How did you hear about us?</label>
+                  <select name="source">
+                    <option>Friend or family</option>
+                    <option>Social media</option>
+                    <option>Google / online search</option>
+                    <option>Open Day</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div style="margin-top: 1.25rem">
+                <button
+                  type="submit"
+                  class="btn-gold"
+                  style="padding: 13px 36px; font-size: 14px"
+                >
+                  Submit Application
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Tab 3: Key Dates -->
+        <div class="tab-content" id="tab-dates">
+          <div class="key-dates">
+            <div class="section-label">2025–2026 Admissions Cycle</div>
+            <div class="section-title" style="margin-bottom: 1rem">
+              Important Dates
+            </div>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 14px;
+                margin-bottom: 1.5rem;
+              "
+            >
+              Mark these dates in your calendar to stay ahead of the admissions
+              process.
+            </p>
+            <table class="dates-table">
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Programme</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Applications Open</td>
+                  <td><span class="date-badge">All</span></td>
+                  <td>1 September 2025</td>
+                </tr>
+                <tr>
+                  <td>Application Deadline — Montessori</td>
+                  <td><span class="date-badge">Montessori</span></td>
+                  <td>30 November 2025</td>
+                </tr>
+                <tr>
+                  <td>Application Deadline — Secondary</td>
+                  <td><span class="date-badge">Secondary</span></td>
+                  <td>31 January 2026</td>
+                </tr>
+                <tr>
+                  <td>Entrance Assessments</td>
+                  <td><span class="date-badge">Secondary</span></td>
+                  <td>14–16 January 2026</td>
+                </tr>
+                <tr>
+                  <td>Montessori Observation Sessions</td>
+                  <td><span class="date-badge">Montessori</span></td>
+                  <td>6–10 January 2026</td>
+                </tr>
+                <tr>
+                  <td>Family Interviews</td>
+                  <td><span class="date-badge">All</span></td>
+                  <td>3–14 February 2026</td>
+                </tr>
+                <tr>
+                  <td>Offer Letters Sent</td>
+                  <td><span class="date-badge">All</span></td>
+                  <td>28 February 2026</td>
+                </tr>
+                <tr>
+                  <td>Acceptance Deadline</td>
+                  <td><span class="date-badge">All</span></td>
+                  <td>31 March 2026</td>
+                </tr>
+                <tr>
+                  <td>Open Day — Campus Tour</td>
+                  <td><span class="date-badge">All</span></td>
+                  <td>14 June 2025</td>
+                </tr>
+                <tr>
+                  <td>New Student Orientation</td>
+                  <td><span class="date-badge">All</span></td>
+                  <td>5 September 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 4: Fees -->
+        <div class="tab-content" id="tab-fees">
+          <div class="section-label">2025–2026 Academic Year</div>
+          <div class="section-title" style="margin-bottom: 0.5rem">
+            School Fees
+          </div>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 14px;
+              margin-bottom: 2rem;
+            "
+          >
+            All fees are payable at the start of each term. A 5% sibling
+            discount applies from the second child. Fees are reviewed annually.
+          </p>
+
+          <div style="margin-bottom: 2rem">
+            <div
+              style="
+                font-size: 11px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--gold);
+                margin-bottom: 0.75rem;
+              "
+            >
+              Montessori Programme
+            </div>
+            <table class="dates-table">
+              <thead>
+                <tr>
+                  <th>Programme</th>
+                  <th>Ages</th>
+                  <th>Tuition / Term</th>
+                  <th>Registration (once)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Toddler</td>
+                  <td>18 months – 3 yrs</td>
+                  <td>₦165,000</td>
+                  <td>₦45,000</td>
+                </tr>
+                <tr>
+                  <td>Preschool</td>
+                  <td>3 – 5 years</td>
+                  <td>₦175,000</td>
+                  <td>₦45,000</td>
+                </tr>
+                <tr>
+                  <td>Kindergarten</td>
+                  <td>5 – 6 years</td>
+                  <td>₦185,000</td>
+                  <td>₦45,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <div
+              style="
+                font-size: 11px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--gold);
+                margin-bottom: 0.75rem;
+              "
+            >
+              Secondary School
+            </div>
+            <table class="dates-table">
+              <thead>
+                <tr>
+                  <th>Year Group</th>
+                  <th>Level</th>
+                  <th>Tuition / Term</th>
+                  <th>Registration (once)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>JSS 1</td>
+                  <td>Junior Secondary</td>
+                  <td>₦220,000</td>
+                  <td>₦60,000</td>
+                </tr>
+                <tr>
+                  <td>JSS 2</td>
+                  <td>Junior Secondary</td>
+                  <td>₦220,000</td>
+                  <td>₦55,000</td>
+                </tr>
+                <tr>
+                  <td>JSS 3</td>
+                  <td>Junior Secondary</td>
+                  <td>₦235,000</td>
+                  <td>₦55,000</td>
+                </tr>
+                <tr>
+                  <td>SS 1</td>
+                  <td>Senior Secondary</td>
+                  <td>₦260,000</td>
+                  <td>₦65,000</td>
+                </tr>
+                <tr>
+                  <td>SS 2</td>
+                  <td>Senior Secondary</td>
+                  <td>₦260,000</td>
+                  <td>₦60,000</td>
+                </tr>
+                <tr>
+                  <td>SS 3</td>
+                  <td>Senior Secondary</td>
+                  <td>₦285,000</td>
+                  <td>₦60,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p
+            style="
+              font-size: 12px;
+              color: var(--text-muted);
+              margin-top: 1.25rem;
+            "
+          >
+            * Uniform, textbooks, and exam fees are billed separately. For a
+            full fee breakdown, please contact the admissions office.
+          </p>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 1.25rem;
+              margin-top: 2.5rem;
+            "
+          >
+            <div class="card" style="border-left: 3px solid var(--green)">
+              <div class="card-icon" style="background: var(--green-pale)">
+                🎓
+              </div>
+              <h3
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--green);
+                  margin-bottom: 6px;
+                "
+              >
+                Scholarships
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.6;
+                "
+              >
+                Merit-based scholarships are available for exceptional Secondary
+                applicants. Contact admissions for details.
+              </p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--gold)">
+              <div class="card-icon" style="background: var(--gold-pale)">
+                💳
+              </div>
+              <h3
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--green);
+                  margin-bottom: 6px;
+                "
+              >
+                Payment Plans
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.6;
+                "
+              >
+                Flexible instalment options are available for qualifying
+                families. Speak to the Bursary team.
+              </p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--green-light)">
+              <div class="card-icon" style="background: var(--green-pale)">
+                👨‍👩‍👦
+              </div>
+              <h3
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--green);
+                  margin-bottom: 6px;
+                "
+              >
+                Sibling Discount
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.6;
+                "
+              >
+                A 5% discount on tuition applies from the second child enrolled
+                at Martins School.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5: FAQs -->
+        <div class="tab-content" id="tab-faqs">
+          <div style="max-width: 700px">
+            <div class="section-label">Frequently Asked Questions</div>
+            <div class="section-title" style="margin-bottom: 2rem">
+              Common Questions
+            </div>
+
+            <div class="faq-item open">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                What age does the Montessori programme start?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                Our Montessori Toddler programme welcomes children from 18
+                months of age. Children may progress through to Kindergarten
+                (age 6).
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                How selective is admission to Secondary School?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                Admission to our Secondary division is selective, based on
+                academic records, the entrance assessment, and the family
+                interview. We assess each applicant holistically — results are
+                one part of a fuller picture.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Do you offer scholarships or bursaries?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                Yes. A limited number of merit-based scholarships are available
+                for exceptional Secondary applicants. Bursaries for financial
+                need are considered on a case-by-case basis. Please contact the
+                admissions office for details.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                What is the class size?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                Montessori classes have a maximum of 20 children. Junior
+                Secondary classes are capped at 28 students, and Senior
+                Secondary classes at 30. This ensures every student receives
+                meaningful individual attention.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Is there school transport?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                We operate a school bus service covering several zones in Ifo,
+                including Aderenle, Oloshe, Coker Road, Vespa, and Ojusango
+                Road. Contact us to confirm if your area is covered and to
+                request a transport form.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Can we visit the school before applying?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                Absolutely — we warmly encourage all prospective families to
+                visit. We hold Open Days every term, and private tours can be
+                arranged by contacting our admissions office. Seeing the school
+                in person often answers questions no website can.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                What if my child has special educational needs?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                We are committed to inclusive education. Please indicate any
+                learning differences or special needs on the application form.
+                Our SEND co-ordinator will contact you to discuss how we can
+                best support your child before and after admission.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                How long does the admissions process take?
+                <div class="faq-q-icon">+</div>
+              </div>
+              <div class="faq-a">
+                From submission of a complete application to offer letter, the
+                process typically takes 4–6 weeks. Incomplete applications may
+                take longer to process.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OPEN DAY CARD -->
+      <section style="background: var(--cream)">
+        <div class="section-label">Visit Us</div>
+        <div class="section-title">Open Day — 14 June 2025</div>
+        <div class="divider"></div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+          "
+        >
+          <div class="card" style="border-top: 3px solid var(--green)">
+            <div style="font-size: 2rem; margin-bottom: 1rem">📅</div>
+            <h3
+              style="
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Saturday, 14 June 2025
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              10:00am – 1:00pm at our Main Campus, 8, Apase Street, Ifo. All
+              prospective families welcome — no appointment needed.
+            </p>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--gold)">
+            <div style="font-size: 2rem; margin-bottom: 1rem">✅</div>
+            <h3
+              style="
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              What to Expect
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              Campus tours, classroom demonstrations, Q&A with the Head of
+              School and Admissions team, and an opportunity to meet current
+              students and parents.
+            </p>
+          </div>
+        </div>
+        <div style="margin-top: 1.5rem">
+          <a href="contact.html" class="btn-filled">Register for Open Day</a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-brand">
+          <div class="nav-logo-text">Martins School</div>
+          <p>
+            Montessori &amp; Secondary Education<br />8, Apase Street, Ifo,
+            Nigeria
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div>
+          <h4>Admissions</h4>
+          <a href="#">How to Apply</a>
+          <a href="#">Key Dates</a>
+          <a href="#">School Fees</a>
+          <a href="#">FAQs</a>
+        </div>
+        <div>
+          <h4>School</h4>
+          <a href="about.html">About Us</a>
+          <a href="montessori.html">Montessori</a>
+          <a href="secondary.html">Secondary</a>
+          <a href="news.html">News</a>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <p>8, Apase Street,<br />Ifo, Ogun State</p>
+          <p>+234 703 990 9900</p>
+          <p>admissions@martinsschool.edu.ng</p>
+        </div>
+      </footer>
+      <div class="footer-bottom">
+        <span>© 2025 Martins School. All rights reserved.</span>
+        <span>Ifo, Nigeria</span>
+      </div>
+
+      <script src="script.js"></script>
+    </div>
+    <a
+        href="#home"
+        class="scroll-top"
+        id="scroll-top"
+        aria-label="Back to top"
+      >
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+  </body>
+</html>

@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en" id="home">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Martins School — Reach us by phone, email, or visit us in Ifo, Nigeria."
+    />
+    <title>Contact | Martins School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ── Tab content panels ── */
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: block;
+        animation: fadeIn 0.25s ease;
+      }
+
+      .tab-info-box {
+        background: var(--green-pale);
+        border: 1px solid rgba(26, 60, 46, 0.12);
+        border-left: 3px solid var(--green);
+        border-radius: var(--radius-lg);
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .tab-info-box h4 {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--green);
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .tab-info-box p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+      .tab-info-box a {
+        color: var(--green);
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .tab-info-box a:hover {
+        text-decoration: underline;
+      }
+
+      .visit-slots {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+        margin-top: 0.75rem;
+      }
+      .visit-slot {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 0.6rem 1rem;
+        font-size: 12.5px;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .visit-slot span {
+        color: var(--green);
+        font-weight: 500;
+      }
+
+      .fees-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.75rem;
+        font-size: 13px;
+      }
+      .fees-table th {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        padding: 0.5rem 0.75rem;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        font-weight: 400;
+      }
+      .fees-table td {
+        padding: 0.65rem 0.75rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-muted);
+      }
+      .fees-table td:last-child {
+        color: var(--green);
+        font-weight: 500;
+      }
+      .fees-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .other-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+        margin-top: 0.75rem;
+      }
+      .other-link-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: white;
+        font-size: 12.5px;
+        color: var(--text-muted);
+        cursor: pointer;
+        text-decoration: none;
+        transition: all var(--transition);
+      }
+      .other-link-btn:hover {
+        border-color: var(--green);
+        color: var(--green);
+        background: var(--green-pale);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="index.html">
+        <div class="nav-logo-mark">MS</div>
+        <div>
+          <div class="nav-logo-text">Martins School</div>
+          <div class="nav-logo-sub">Montessori &amp; Secondary</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="montessori.html">Montessori</a>
+        <a href="secondary.html">Secondary</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="news.html">News</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="nav-search">
+        <input
+          type="text"
+          class="nav-search-input"
+          placeholder="Search..."
+          id="nav-search-input"
+        />
+        <button class="nav-search-btn" aria-label="Search" id="nav-search-btn">
+          🔍
+        </button>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="page-anim">
+      <!-- PAGE HERO -->
+      <div class="page-hero hero-contact">
+        <div class="page-hero-breadcrumb">
+          <a href="index.html">Home</a> / Contact
+        </div>
+        <h1>Get in<br />Touch</h1>
+        <p>
+          We'd love to hear from you. Our team responds within one business day.
+        </p>
+      </div>
+
+      <!-- MAIN CONTACT SECTION -->
+      <section>
+        <div class="contact-layout">
+          <!-- LEFT: Info -->
+          <div>
+            <div class="section-label">Contact Details</div>
+            <div class="section-title">We're Here<br />for You</div>
+            <div class="divider"></div>
+            <p
+              style="
+                font-size: 14.5px;
+                color: var(--text-muted);
+                line-height: 1.8;
+                margin-bottom: 2.5rem;
+              "
+            >
+              Whether you have a question about admissions, want to schedule a
+              visit, or simply want to learn more about life at Martins School —
+              don't hesitate to reach out.
+            </p>
+
+            <div class="contact-info-block">
+              <div class="contact-detail">
+                <div class="contact-icon">📍</div>
+                <div class="contact-detail-text">
+                  <h4>Address</h4>
+                  <p>8, Apase Street,<br />Ifo, Ogun State, Nigeria</p>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon">📞</div>
+                <div class="contact-detail-text">
+                  <h4>Phone</h4>
+                  <a href="tel:+2347039909900">+234 703 990 9900</a><br />
+                  <a href="tel:+2348012345678">+234 801 234 5678</a>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-detail-text">
+                  <h4>Email</h4>
+                  <a href="mailto:info@martinsschool.edu.ng"
+                    >info@martinsschool.edu.ng</a
+                  ><br />
+                  <a href="mailto:admissions@martinsschool.edu.ng"
+                    >admissions@martinsschool.edu.ng</a
+                  >
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon">🕐</div>
+                <div class="contact-detail-text">
+                  <h4>Office Hours</h4>
+                  <div class="hours-grid" style="grid-template-columns: 1fr">
+                    <div class="hours-row">
+                      <span>Monday – Friday</span><span>7:30am – 4:30pm</span>
+                    </div>
+                    <div class="hours-row">
+                      <span>Saturday</span><span>9:00am – 12:00pm</span>
+                    </div>
+                    <div class="hours-row">
+                      <span>Sunday &amp; Public Holidays</span
+                      ><span>Closed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Departments -->
+            <div style="margin-top: 3rem">
+              <div class="section-label">Departments</div>
+              <div class="section-title" style="font-size: 1.6rem">
+                Direct Lines
+              </div>
+              <div class="divider"></div>
+              <div class="dept-cards">
+                <div class="dept-card">
+                  <div class="dept-card-icon">🌱</div>
+                  <h4>Montessori Office</h4>
+                  <p>Admissions, visits, and programme enquiries</p>
+                  <a href="mailto:montessori@martinsschool.edu.ng"
+                    >montessori@martinsschool.edu.ng</a
+                  >
+                </div>
+                <div class="dept-card">
+                  <div class="dept-card-icon">📚</div>
+                  <h4>Secondary Office</h4>
+                  <p>JSS–SS admissions and academic matters</p>
+                  <a href="mailto:secondary@martinsschool.edu.ng"
+                    >secondary@martinsschool.edu.ng</a
+                  >
+                </div>
+                <div class="dept-card">
+                  <div class="dept-card-icon">💳</div>
+                  <h4>Bursary</h4>
+                  <p>Fees, payments, and financial enquiries</p>
+                  <a href="mailto:bursary@martinsschool.edu.ng"
+                    >bursary@martinsschool.edu.ng</a
+                  >
+                </div>
+                <div class="dept-card">
+                  <div class="dept-card-icon">🏥</div>
+                  <h4>Welfare &amp; Health</h4>
+                  <p>Student welfare, nurse, and counselling</p>
+                  <a href="mailto:welfare@martinsschool.edu.ng"
+                    >welfare@martinsschool.edu.ng</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Form -->
+          <div class="contact-form-wrap">
+            <h2>Send Us a Message</h2>
+            <p>
+              Fill in the form and a member of our team will be in touch
+              promptly.
+            </p>
+
+            <!-- SUBJECT TABS -->
+            <div class="subject-tabs" id="subject-tabs">
+              <button
+                class="subject-tab active"
+                onclick="setSubject(this, 'general')"
+              >
+                General
+              </button>
+              <button
+                class="subject-tab"
+                onclick="setSubject(this, 'admissions')"
+              >
+                Admissions
+              </button>
+              <button class="subject-tab" onclick="setSubject(this, 'visit')">
+                Book a Visit
+              </button>
+              <button class="subject-tab" onclick="setSubject(this, 'fees')">
+                Fees
+              </button>
+              <button class="subject-tab" onclick="setSubject(this, 'other')">
+                Other
+              </button>
+            </div>
+
+            <!-- ── GENERAL (default) ── -->
+            <div class="tab-panel active" id="panel-general">
+              <div class="tab-info-box">
+                <h4>💬 General Enquiry</h4>
+                <p>
+                  Have a general question about Martins School? Fill in the form
+                  below and our team will get back to you within one business
+                  day.
+                </p>
+              </div>
+            </div>
+
+            <!-- ── ADMISSIONS ── -->
+            <div class="tab-panel" id="panel-admissions">
+              <div class="tab-info-box">
+                <h4>🎓 Admissions Enquiry</h4>
+                <p>
+                  We welcome applications for our Montessori (ages 18 months – 6
+                  years) and Secondary (JSS1 – SS3) programmes. Our admissions
+                  team is happy to guide you through the process.
+                </p>
+                <p style="margin-top: 8px">
+                  📧 Direct line:
+                  <a href="mailto:admissions@martinsschool.edu.ng"
+                    >admissions@martinsschool.edu.ng</a
+                  >
+                </p>
+                <p style="margin-top: 4px">
+                  📞 Call us: <a href="tel:+2347039909900">+234 703 990 9900</a>
+                </p>
+                <p style="margin-top: 8px">
+                  <a href="admissions.html">→ View full admissions guide</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- ── BOOK A VISIT ── -->
+            <div class="tab-panel" id="panel-visit">
+              <div class="tab-info-box">
+                <h4>📅 Book a School Visit</h4>
+                <p>
+                  Tours run every
+                  <strong style="color: var(--green)"
+                    >Tuesday and Thursday at 10:00am</strong
+                  >
+                  during term time. Spots are limited — please submit the form
+                  to reserve yours.
+                </p>
+                <div class="visit-slots">
+                  <div class="visit-slot">
+                    📅 <span>Tuesday</span> — 10:00am
+                  </div>
+                  <div class="visit-slot">
+                    📅 <span>Thursday</span> — 10:00am
+                  </div>
+                  <div class="visit-slot">⏱ Duration: <span>~1 hour</span></div>
+                  <div class="visit-slot">👥 Max: <span>4 families</span></div>
+                </div>
+                <p style="margin-top: 10px">
+                  Our admissions team will confirm your slot within one business
+                  day.
+                </p>
+              </div>
+            </div>
+
+            <!-- ── FEES ── -->
+            <div class="tab-panel" id="panel-fees">
+              <div class="tab-info-box">
+                <h4>💳 Fees &amp; Payments</h4>
+                <p>
+                  For a detailed fee schedule and payment plan options, contact
+                  our Bursary directly. Below is a summary of our payment
+                  structure:
+                </p>
+                <table class="fees-table">
+                  <thead>
+                    <tr>
+                      <th>Programme</th>
+                      <th>Payment Options</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Montessori</td>
+                      <td>Termly or instalments</td>
+                    </tr>
+                    <tr>
+                      <td>JSS (Secondary)</td>
+                      <td>Termly or instalments</td>
+                    </tr>
+                    <tr>
+                      <td>SSS (Secondary)</td>
+                      <td>Termly or instalments</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p style="margin-top: 10px">
+                  📧 Bursary:
+                  <a href="mailto:bursary@martinsschool.edu.ng"
+                    >bursary@martinsschool.edu.ng</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <!-- ── OTHER ── -->
+            <div class="tab-panel" id="panel-other">
+              <div class="tab-info-box">
+                <h4>📬 Other Enquiries</h4>
+                <p>
+                  Not sure where to direct your message? Use the form below and
+                  we'll route it to the right team. Or reach out directly via
+                  one of our departments:
+                </p>
+                <div class="other-links">
+                  <a
+                    class="other-link-btn"
+                    href="mailto:welfare@martinsschool.edu.ng"
+                    >🏥 Welfare &amp; Health</a
+                  >
+                  <a
+                    class="other-link-btn"
+                    href="mailto:montessori@martinsschool.edu.ng"
+                    >🌱 Montessori Office</a
+                  >
+                  <a
+                    class="other-link-btn"
+                    href="mailto:secondary@martinsschool.edu.ng"
+                    >📚 Secondary Office</a
+                  >
+                  <a
+                    class="other-link-btn"
+                    href="mailto:info@martinsschool.edu.ng"
+                    >✉️ General Office</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- FORM FIELDS (shared across all tabs) -->
+            <form id="contact-form">
+              <input type="hidden" id="subject-field" value="General Enquiry" />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">First Name *</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    placeholder="e.g. Adaeze"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name *</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    placeholder="e.g. Okafor"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input class="form-input" type="tel" placeholder="+234 ..." />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">I am a…</label>
+                <select class="form-input form-select">
+                  <option value="">Select one</option>
+                  <option>Prospective parent</option>
+                  <option>Current parent</option>
+                  <option>Student</option>
+                  <option>Member of the press</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Your Message *</label>
+                <textarea
+                  class="form-input form-textarea"
+                  placeholder="Tell us how we can help…"
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-filled"
+                style="width: 100%; padding: 13px; font-size: 13px"
+              >
+                Send Message
+              </button>
+
+              <p
+                style="
+                  font-size: 11px;
+                  color: var(--text-muted);
+                  margin-top: 1rem;
+                  line-height: 1.6;
+                  text-align: center;
+                "
+              >
+                By submitting this form you agree to our privacy policy. We will
+                never share your details with third parties.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <section class="map-section">
+        <div class="section-label">Find Us</div>
+        <div class="section-title">Our Location</div>
+        <div class="divider"></div>
+        <p class="section-sub">
+          We are located in Oke-Ola Community of Ifo — easily accessible from
+          major routes across Ifo, Ogun State.
+        </p>
+
+        <div
+          class="map-embed"
+          style="margin-top: 2.5rem; background: none; padding: 0"
+        >
+          <iframe
+            src="https://maps.google.com/maps?q=Ifo,+Ogun+State,+Nigeria&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style="border: 0; display: block; border-radius: 14px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Martins School Location — Ifo, Ogun State"
+          ></iframe>
+        </div>
+
+        <div class="visit-strip">
+          <div class="visit-card">
+            <div class="visit-card-icon">🚗</div>
+            <h3>By Car</h3>
+            <p>
+              We are off Ring Road in the GRA. Ample parking is available
+              on-site for visitors and parents.
+            </p>
+          </div>
+          <div class="visit-card">
+            <div class="visit-card-icon">🚌</div>
+            <h3>By Public Transport</h3>
+            <p>
+              Buses or Bike from Adenrele, Oloshe, Vespa, and Coker Road pass
+              through Oloshe Road. Alight at Apase Street, Oke-Ola Town.
+            </p>
+          </div>
+          <div class="visit-card">
+            <div class="visit-card-icon">📅</div>
+            <h3>Book a School Tour</h3>
+            <p>
+              Tours run every Tuesday and Thursday at 10:00am during term time.
+              Contact us to reserve your spot.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section>
+        <div class="section-label">Quick Answers</div>
+        <div class="section-title">Frequently Asked Questions</div>
+        <div class="divider"></div>
+        <div style="max-width: 720px; margin-top: 2.5rem">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How do I arrange a school tour? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Simply fill in the contact form above, selecting "Book a Visit"
+                as your subject. Our admissions team will follow up within one
+                business day to confirm a date and time. Tours run every Tuesday
+                and Thursday at 10:00am during term time.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How quickly will you respond to my enquiry?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We aim to respond to all enquiries within one business day. For
+                urgent matters, please call us directly on +234 703 990 9900
+                during office hours.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Can I speak with a current parent or student?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Absolutely. During school tours we often arrange for prospective
+                families to meet current parents and, where appropriate,
+                students. Please mention this when booking your tour.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What are the fee payment options? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Fees can be paid termly or in structured instalments. Contact
+                our Bursary at bursary@martinsschool.edu.ng for a full fee
+                schedule and payment plan options.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Is there a waiting list for oversubscribed year groups?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes. When a year group is full, we maintain a waiting list and
+                contact families as soon as a place becomes available. We
+                recommend applying as early as possible to secure your child's
+                place.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-brand">
+          <div class="nav-logo-text">Martins School</div>
+          <p>
+            Montessori &amp; Secondary Education<br />8, Apase Street, Ifo,
+            Nigeria
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div>
+          <h4>Montessori</h4>
+          <a href="montessori.html">Toddler Programme</a>
+          <a href="montessori.html">Preschool</a>
+          <a href="montessori.html">Kindergarten</a>
+          <a href="admissions.html">Apply</a>
+        </div>
+        <div>
+          <h4>School</h4>
+          <a href="about.html">About Us</a>
+          <a href="secondary.html">Secondary</a>
+          <a href="news.html">News</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <p>8, Apase Street,<br />Ifo, Ogun State</p>
+          <p>+234 703 990 9900</p>
+          <p>info@martinsschool.edu.ng</p>
+        </div>
+      </footer>
+      <div class="footer-bottom">
+        <span>© 2025 Martins School. All rights reserved.</span>
+        <span>Ifo, Nigeria</span>
+      </div>
+
+      <script src="script.js"></script>
+      <script>
+        var subjectLabels = {
+          general: "General Enquiry",
+          admissions: "Admissions Enquiry",
+          visit: "Book a Visit",
+          fees: "Fees & Payments",
+          other: "Other",
+        };
+
+        function setSubject(btn, panelKey) {
+          /* Update active tab button */
+          document.querySelectorAll(".subject-tab").forEach(function (b) {
+            b.classList.remove("active");
+          });
+          btn.classList.add("active");
+
+          /* Update hidden field value */
+          document.getElementById("subject-field").value =
+            subjectLabels[panelKey] || panelKey;
+
+          /* Show the matching panel, hide the rest */
+          document.querySelectorAll(".tab-panel").forEach(function (p) {
+            p.classList.remove("active");
+          });
+          var panel = document.getElementById("panel-" + panelKey);
+          if (panel) panel.classList.add("active");
+        }
+      </script>
+    </div>
+    <a href="#home" class="scroll-top" id="scroll-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </body>
+</html>

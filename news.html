@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en" id="home">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="News & Events — Martins School, Ifo. Stay up to date with the latest happenings, announcements, and events."
+    />
+    <title>News & Events | Martins School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ===== NEWS PAGE SPECIFIC ===== */
+      .news-filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+      .filter-btn {
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        padding: 7px 18px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all var(--transition);
+      }
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+      }
+
+      /* Featured article */
+      .news-featured {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        margin-top: 3rem;
+        transition: box-shadow var(--transition);
+      }
+      .news-featured:hover {
+        box-shadow: var(--shadow-lg);
+      }
+      .news-featured-img {
+        height: 440px;
+        overflow: hidden;
+      }
+      .news-featured-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .news-featured:hover .news-featured-img img {
+        transform: scale(1.04);
+      }
+      .news-featured-body {
+        padding: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+      }
+      .news-featured-body .news-tag {
+        margin-bottom: 1.2rem;
+      }
+      .news-featured-body h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+        color: var(--green);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      .news-featured-body p {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 1.75rem;
+      }
+      .news-featured-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 12px;
+        color: var(--text-muted);
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+        margin-top: auto;
+      }
+      .news-featured-meta .author-dot {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--green-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+
+      /* Main news grid */
+      .news-main-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        margin-top: 4rem;
+        align-items: start;
+      }
+      .news-articles {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .news-article-row {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border);
+        transition: background var(--transition);
+        cursor: pointer;
+      }
+      .news-article-row:first-child {
+        padding-top: 0;
+      }
+      .news-article-row:hover .article-img img {
+        transform: scale(1.05);
+      }
+      .article-img {
+        height: 130px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .article-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .article-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .article-body .news-tag {
+        margin-bottom: 0.5rem;
+      }
+      .article-body h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: var(--green);
+        line-height: 1.3;
+        margin-bottom: 0.4rem;
+        transition: color var(--transition);
+      }
+      .news-article-row:hover .article-body h3 {
+        color: var(--gold);
+      }
+      .article-body p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.65;
+        margin-bottom: 0.5rem;
+      }
+      .article-date {
+        font-size: 11px;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+      }
+
+      /* Sidebar */
+      .news-sidebar {
+        position: sticky;
+        top: 88px;
+      }
+      .sidebar-section {
+        margin-bottom: 2.5rem;
+      }
+      .sidebar-title {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.25rem;
+        font-weight: 400;
+      }
+      .event-item {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border);
+        align-items: flex-start;
+      }
+      .event-item:last-child {
+        border-bottom: none;
+      }
+      .event-date-block {
+        text-align: center;
+        background: var(--green-pale);
+        border-radius: var(--radius);
+        padding: 6px 10px;
+        flex-shrink: 0;
+        min-width: 46px;
+      }
+      .event-date-block .day {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--green);
+        line-height: 1;
+      }
+      .event-date-block .month {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-top: 2px;
+      }
+      .event-info h4 {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.4;
+        margin-bottom: 3px;
+      }
+      .event-info p {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      .newsletter-box {
+        background: var(--green);
+        border-radius: var(--radius-xl);
+        padding: 2rem;
+        color: white;
+      }
+      .newsletter-box h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        color: white;
+        margin-bottom: 0.5rem;
+      }
+      .newsletter-box p {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.65;
+        margin-bottom: 1.25rem;
+      }
+      .newsletter-input {
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 13px;
+        margin-bottom: 10px;
+        font-family: "DM Sans", sans-serif;
+        outline: none;
+        transition: border-color var(--transition);
+      }
+      .newsletter-input::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .newsletter-input:focus {
+        border-color: var(--gold);
+      }
+
+      /* Pagination */
+      .pagination {
+        display: flex;
+        gap: 6px;
+        margin-top: 2.5rem;
+        align-items: center;
+      }
+      .page-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text-muted);
+        font-size: 13px;
+        cursor: pointer;
+        transition: all var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .page-btn:hover,
+      .page-btn.active {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+      }
+
+      @media (max-width: 1024px) {
+        .news-main-grid {
+          grid-template-columns: 1fr;
+        }
+        .news-sidebar {
+          position: static;
+        }
+      }
+      @media (max-width: 768px) {
+        .news-featured {
+          grid-template-columns: 1fr;
+        }
+        .news-featured-img {
+          height: 260px;
+        }
+        .news-featured-body {
+          padding: 2rem;
+        }
+        .news-article-row {
+          grid-template-columns: 1fr;
+        }
+        .article-img {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="index.html">
+        <div class="nav-logo-mark">MS</div>
+        <div>
+          <div class="nav-logo-text">Martins School</div>
+          <div class="nav-logo-sub">Montessori &amp; Secondary</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="montessori.html">Montessori</a>
+        <a href="secondary.html">Secondary</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="news.html" class="active">News</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <!-- Keep this -->
+      <div class="nav-search">
+        <input
+          type="text"
+          class="nav-search-input"
+          placeholder="Search..."
+          id="nav-search-input"
+        />
+        <button class="nav-search-btn" aria-label="Search" id="nav-search-btn">
+          🔍
+        </button>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="page-anim">
+      <!-- PAGE HERO -->
+      <div class="page-hero hero-news">
+        <div class="page-hero-breadcrumb">
+          <a href="index.html">Home</a> / News &amp; Events
+        </div>
+        <h1>News &amp;<br />Events</h1>
+        <p>
+          Stories from our classrooms, achievements, and upcoming events at
+          Martins School.
+        </p>
+      </div>
+
+      <!-- FILTERS + FEATURED -->
+      <section>
+        <div class="news-filters" id="news-filters">
+          <button class="filter-btn active" onclick="filterNews(this, 'all')">
+            All
+          </button>
+          <button class="filter-btn" onclick="filterNews(this, 'montessori')">
+            Montessori
+          </button>
+          <button class="filter-btn" onclick="filterNews(this, 'secondary')">
+            Secondary
+          </button>
+          <button class="filter-btn" onclick="filterNews(this, 'events')">
+            Events
+          </button>
+          <button class="filter-btn" onclick="filterNews(this, 'achievements')">
+            Achievements
+          </button>
+          <button class="filter-btn" onclick="filterNews(this, 'admissions')">
+            Admissions
+          </button>
+        </div>
+
+        <!-- FEATURED -->
+        <div class="news-featured">
+          <div class="news-featured-img">
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80"
+              alt="Students in class"
+            />
+          </div>
+          <div class="news-featured-body">
+            <span class="news-tag">Montessori</span>
+            <h2>
+              Inspiring a Lifelong Love of Learning Through Child-Led Discovery
+            </h2>
+            <p>
+              Our Montessori classrooms are buzzing with purpose this term.
+              Children across all three stages — Toddler, Preschool, and
+              Kindergarten — are diving deep into self-directed projects, from
+              constructing geometric models to composing their first sentences
+              with moveable alphabets.
+            </p>
+            <a href="#" class="link-arrow">Read the full story →</a>
+            <div class="news-featured-meta">
+              <div class="author-dot">✍️</div>
+              <div>
+                <div
+                  style="font-weight: 500; color: var(--text); font-size: 13px"
+                >
+                  Mrs. Folasade Adewale
+                </div>
+                <div>Montessori Lead · May 2, 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="news-main-grid">
+          <!-- Articles -->
+          <div>
+            <div class="news-articles" id="articles-list">
+              <div class="news-article-row" data-category="secondary">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500&q=70"
+                    alt="Secondary students"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Secondary</span>
+                  <h3>
+                    A Culture of Kindness and Excellence in Our Secondary School
+                  </h3>
+                  <p>
+                    How our JSS–SS pastoral programme is building a generation
+                    of empathetic leaders.
+                  </p>
+                  <div class="article-date">Apr 23, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="events">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&q=70"
+                    alt="College fair"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Events</span>
+                  <h3>
+                    College &amp; Career Readiness Fair — Applications Now Open
+                  </h3>
+                  <p>
+                    Over 30 universities and career mentors will converge on our
+                    campus this June for our annual fair.
+                  </p>
+                  <div class="article-date">Apr 14, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="achievements">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500&q=70"
+                    alt="Award ceremony"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Achievements</span>
+                  <h3>
+                    Martins Students Win Three Prizes at the Ogun State Science
+                    Olympiad
+                  </h3>
+                  <p>
+                    Our SS2 students brought home gold, silver, and bronze — a
+                    school-record haul at the state competition.
+                  </p>
+                  <div class="article-date">Apr 5, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="admissions">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=500&q=70"
+                    alt="Admissions"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Admissions</span>
+                  <h3>
+                    2025/26 Admissions Are Open — Here's What You Need to Know
+                  </h3>
+                  <p>
+                    A complete guide to our application process, key dates, and
+                    what makes Martins the right choice for your child.
+                  </p>
+                  <div class="article-date">Mar 28, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="montessori">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=500&q=70"
+                    alt="Montessori child"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Montessori</span>
+                  <h3>
+                    The Three-Hour Work Cycle: Why Uninterrupted Focus Matters
+                  </h3>
+                  <p>
+                    A deep dive into the science behind our morning work blocks
+                    and the profound concentration they build.
+                  </p>
+                  <div class="article-date">Mar 18, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="montessori">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=70"
+                    alt="Sensorial materials"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Montessori</span>
+                  <h3>How Sensorial Materials Build the Mathematical Mind</h3>
+                  <p>
+                    Long before numbers appear on paper, Martins Montessori
+                    children build deep number sense through hands-on sensorial
+                    apparatus.
+                  </p>
+                  <div class="article-date">Feb 27, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="montessori">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1503676382389-4809596d5290?w=500&q=70"
+                    alt="Emerging literacy"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Montessori</span>
+                  <h3>
+                    From Sandpaper Letters to Stories: How Literacy Emerges
+                    Naturally
+                  </h3>
+                  <p>
+                    Our language curriculum follows the child's own
+                    developmental pace — tracing letters, building words, and
+                    composing their first sentences with joy rather than
+                    pressure.
+                  </p>
+                  <div class="article-date">Jan 8, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="achievements">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=500&q=70"
+                    alt="Debate competition"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Achievements</span>
+                  <h3>
+                    First Place at the South-West National Debate Championship
+                  </h3>
+                  <p>
+                    The Martins Debate Society, led by SS3 student Adaeze
+                    Nwachukwu, won the South-West regional final — the school's
+                    first such title in seven years.
+                  </p>
+                  <div class="article-date">Mar 22, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="achievements">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&q=70"
+                    alt="WAEC results"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Achievements</span>
+                  <h3>
+                    Outstanding WAEC Results: 98% of SS3 Students Score 5
+                    Credits and Above
+                  </h3>
+                  <p>
+                    Our 2024 WAEC cohort recorded the school's best-ever
+                    results, with every student eligible for university
+                    admission and 14 scoring straight A's across all subjects.
+                  </p>
+                  <div class="article-date">Jan 30, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="secondary">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&q=70"
+                    alt="Capstone projects"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Secondary</span>
+                  <h3>Introducing Capstone Projects for All SS2 Students</h3>
+                  <p>
+                    Every SS2 student will complete a term-long investigation
+                    into a real-world problem of their choosing, mentored by
+                    industry professionals from across Nigeria.
+                  </p>
+                  <div class="article-date">Jan 30, 2025</div>
+                </div>
+              </div>
+
+              <!-- EVENTS -->
+              <div class="news-article-row" data-category="events">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&q=70"
+                    alt="Prize giving"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Events</span>
+                  <h3>End-of-Year Prize Giving Ceremony — 5 July 2025</h3>
+                  <p>
+                    Families are warmly invited to our annual Prize Giving Day
+                    where we celebrate academic, artistic, and sporting
+                    achievements across all year groups.
+                  </p>
+                  <div class="article-date">Mar 31, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="events">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1571019613914-85f342c6a11e?w=500&q=70"
+                    alt="Sports day"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Events</span>
+                  <h3>Annual Inter-House Sports Day Returns This May</h3>
+                  <p>
+                    After a two-year hiatus, our much-loved inter-house
+                    athletics competition returns on 24 May, with new events
+                    including swimming and table tennis added to the programme.
+                  </p>
+                  <div class="article-date">Mar 12, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="events">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&q=70"
+                    alt="Cultural day"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Events</span>
+                  <h3>
+                    Cultural Day 2025: A Celebration of Nigeria's Rich Heritage
+                  </h3>
+                  <p>
+                    Students from all year groups presented music, fashion,
+                    food, and drama celebrating Nigeria's diverse cultures. It
+                    was our most vibrant and well-attended Cultural Day yet.
+                  </p>
+                  <div class="article-date">Feb 5, 2025</div>
+                </div>
+              </div>
+
+              <div class="news-article-row" data-category="secondary">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&q=70"
+                    alt="Entrepreneurship"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Secondary</span>
+                  <h3>
+                    Young Entrepreneurs: SS1 Students Launch Their First Real
+                    Businesses
+                  </h3>
+                  <p>
+                    As part of our new entrepreneurship curriculum, SS1 students
+                    pitched, funded, and ran real micro-businesses over six
+                    weeks — from handmade crafts to digital services.
+                  </p>
+                  <div class="article-date">Dec 20, 2024</div>
+                </div>
+              </div>
+              <div class="news-article-row" data-category="secondary">
+                <div class="article-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&q=70"
+                    alt="STEM lab"
+                  />
+                </div>
+                <div class="article-body">
+                  <span class="news-tag">Secondary</span>
+                  <h3>New STEM Innovation Lab Opens for JSS and SS Students</h3>
+                  <p>
+                    Our fully equipped lab — with robotics kits, 3D printers,
+                    and coding stations — is now open for every secondary
+                    student.
+                  </p>
+                  <div class="article-date">Mar 10, 2025</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pagination">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn" style="width: auto; padding: 0 14px">
+                Next →
+              </button>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="news-sidebar">
+            <div class="sidebar-section">
+              <div class="sidebar-title">Upcoming Events</div>
+
+              <div class="event-item">
+                <div class="event-date-block">
+                  <div class="day">14</div>
+                  <div class="month">Jun</div>
+                </div>
+                <div class="event-info">
+                  <h4>College &amp; Career Readiness Fair</h4>
+                  <p>9:00am — Main Assembly Hall</p>
+                </div>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-block">
+                  <div class="day">20</div>
+                  <div class="month">Jun</div>
+                </div>
+                <div class="event-info">
+                  <h4>Montessori Open Morning</h4>
+                  <p>10:00am — Montessori Campus</p>
+                </div>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-block">
+                  <div class="day">5</div>
+                  <div class="month">Jul</div>
+                </div>
+                <div class="event-info">
+                  <h4>End-of-Year Prize Giving</h4>
+                  <p>3:00pm — School Auditorium</p>
+                </div>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-block">
+                  <div class="day">12</div>
+                  <div class="month">Jul</div>
+                </div>
+                <div class="event-info">
+                  <h4>SS3 Valedictory Service</h4>
+                  <p>10:00am — Chapel &amp; Grounds</p>
+                </div>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-block">
+                  <div class="day">2</div>
+                  <div class="month">Sep</div>
+                </div>
+                <div class="event-info">
+                  <h4>New Term Resumes — 2025/26</h4>
+                  <p>All students report 8:00am</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="newsletter-box">
+              <h3>Stay in the Loop</h3>
+              <p>
+                Get school news, event reminders, and term updates delivered
+                straight to your inbox.
+              </p>
+              <input
+                class="newsletter-input"
+                type="email"
+                placeholder="Your email address"
+              />
+              <button
+                class="btn-gold"
+                style="width: 100%; padding: 11px"
+                onclick="subscribeNewsletter()"
+              >
+                Subscribe
+              </button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- CTA BAND -->
+      <div
+        class="cta-band"
+        style="padding-bottom: 3rem; background: var(--cream)"
+      >
+        <div>
+          <div class="section-label">Admissions Open</div>
+          <h3
+            style="
+              font-family: &quot;Cormorant Garamond&quot;, serif;
+              font-size: 1.6rem;
+              color: var(--green);
+            "
+          >
+            Ready to Join the Martins Family?
+          </h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px">
+            Limited spaces available for the 2025/26 academic year.
+          </p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a href="admissions.html" class="btn-filled">Apply Now</a>
+          <a href="contact.html" class="btn-outline">Contact Us</a>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-brand">
+          <div class="nav-logo-text">Martins School</div>
+          <p>
+            Montessori &amp; Secondary Education<br />8, Apase Street, Ifo,
+            Nigeria
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div>
+          <h4>Montessori</h4>
+          <a href="montessori.html">Toddler Programme</a>
+          <a href="montessori.html">Preschool</a>
+          <a href="montessori.html">Kindergarten</a>
+          <a href="admissions.html">Apply</a>
+        </div>
+        <div>
+          <h4>School</h4>
+          <a href="about.html">About Us</a>
+          <a href="secondary.html">Secondary</a>
+          <a href="news.html">News</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <p>8, Apase Street<br />Ifo, Ogun State</p>
+          <p>+234 703 990 9900</p>
+          <p>info@martinsschool.edu.ng</p>
+        </div>
+      </footer>
+      <div class="footer-bottom">
+        <span>© 2025 Martins School. All rights reserved.</span>
+        <span>Ifo, Nigeria</span>
+      </div>
+      <script src="script.js"></script>
+      <script>
+        const ARTICLES_PER_PAGE = 4;
+        let currentPage = 1;
+        let currentCategory = "all";
+
+        function getVisibleArticles() {
+          const all = Array.from(
+            document.querySelectorAll(".news-article-row"),
+          );
+          if (currentCategory === "all") return all;
+          return all.filter((r) => r.dataset.category === currentCategory);
+        }
+
+        function renderPage() {
+          const articles = getVisibleArticles();
+          const total = articles.length;
+          const totalPages = Math.ceil(total / ARTICLES_PER_PAGE);
+          const start = (currentPage - 1) * ARTICLES_PER_PAGE;
+          const end = start + ARTICLES_PER_PAGE;
+
+          // Hide all articles first
+          document
+            .querySelectorAll(".news-article-row")
+            .forEach((r) => (r.style.display = "none"));
+
+          // Show only current page slice
+          articles.slice(start, end).forEach((r) => (r.style.display = "grid"));
+
+          // Rebuild pagination
+          updatePagination(totalPages);
+        }
+
+        function updatePagination(totalPages) {
+          const pagination = document.querySelector(".pagination");
+          pagination.innerHTML = "";
+
+          for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement("button");
+            btn.className = "page-btn" + (i === currentPage ? " active" : "");
+            btn.textContent = i;
+            btn.addEventListener("click", () => {
+              currentPage = i;
+              renderPage();
+              window.scrollTo({
+                top: document.getElementById("articles-list").offsetTop - 100,
+                behavior: "smooth",
+              });
+            });
+            pagination.appendChild(btn);
+          }
+
+          // Next button — only show if not on last page
+          if (currentPage < totalPages) {
+            const next = document.createElement("button");
+            next.className = "page-btn";
+            next.style.cssText = "width:auto;padding:0 14px";
+            next.textContent = "Next →";
+            next.addEventListener("click", () => {
+              currentPage++;
+              renderPage();
+              window.scrollTo({
+                top: document.getElementById("articles-list").offsetTop - 100,
+                behavior: "smooth",
+              });
+            });
+            pagination.appendChild(next);
+          }
+        }
+
+        function filterNews(btn, category) {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentCategory = category;
+          currentPage = 1;
+          renderPage();
+        }
+
+        function subscribeNewsletter() {
+          const input = document.querySelector(".newsletter-input");
+          if (input.value && input.value.includes("@")) {
+            showToast(
+              "Thanks! You're now subscribed to Martins School updates.",
+            );
+            input.value = "";
+          } else {
+            showToast("Please enter a valid email address.");
+          }
+        }
+
+        // Run on load
+        renderPage();
+      </script>
+    </div>
+    <a href="#home" class="scroll-top" id="scroll-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </body>
+</html>

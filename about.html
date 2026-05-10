@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en" id="home">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Martins School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="index.html">
+        <div class="nav-logo-mark">MS</div>
+        <div>
+          <div class="nav-logo-text">Martins School</div>
+          <div class="nav-logo-sub">Montessori &amp; Secondary</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="montessori.html">Montessori</a>
+        <a href="secondary.html">Secondary</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <!-- Keep this -->
+      <div class="nav-search">
+        <input
+          type="text"
+          class="nav-search-input"
+          placeholder="Search..."
+          id="nav-search-input"
+        />
+        <button class="nav-search-btn" aria-label="Search" id="nav-search-btn">
+          🔍
+        </button>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="page-anim">
+      <!-- PAGE HERO -->
+      <div class="page-hero hero-about">
+        <div class="page-hero-breadcrumb">
+          <a href="index.html">Home</a> / About Us
+        </div>
+        <h1>Discover<br />Martins School</h1>
+        <p>
+          Our story, vision, mission, and the dedicated team that makes it all
+          possible.
+        </p>
+      </div>
+
+      <!-- STORY -->
+      <section>
+        <div class="two-col">
+          <div>
+            <div class="section-label">Our Story</div>
+            <div class="section-title">12 Years of<br />Shaping Futures</div>
+            <div class="divider"></div>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 1rem;
+              "
+            >
+              Founded in 2014 in Ifo by Mr. Ibrahim Akinwunmi, Martins School
+              set out with a singular vision: to create an educational
+              institution where the Montessori philosophy and rigorous academic
+              excellence could coexist and thrive.
+            </p>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 1.5rem;
+              "
+            >
+              What began as a small nursery class of 22 children in a rented
+              bungalow has grown into a thriving community of over 600 students
+              across two campuses — each one supported by a faculty of
+              passionate, internationally trained educators.
+            </p>
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap">
+              <div>
+                <div
+                  style="
+                    font-family: &quot;Cormorant Garamond&quot;, serif;
+                    font-size: 2.5rem;
+                    color: var(--green);
+                    font-weight: 300;
+                    line-height: 1;
+                  "
+                >
+                  600+
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    margin-top: 4px;
+                  "
+                >
+                  Students today
+                </div>
+              </div>
+              <div>
+                <div
+                  style="
+                    font-family: &quot;Cormorant Garamond&quot;, serif;
+                    font-size: 2.5rem;
+                    color: var(--green);
+                    font-weight: 300;
+                    line-height: 1;
+                  "
+                >
+                  2
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    margin-top: 4px;
+                  "
+                >
+                  Campuses
+                </div>
+              </div>
+              <div>
+                <div
+                  style="
+                    font-family: &quot;Cormorant Garamond&quot;, serif;
+                    font-size: 2.5rem;
+                    color: var(--green);
+                    font-weight: 300;
+                    line-height: 1;
+                  "
+                >
+                  45+
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    margin-top: 4px;
+                  "
+                >
+                  Qualified staff
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-img">
+            <div class="info-img">
+              <img src="img/about-story.jpeg" alt="Martins School campus" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HISTORY TIMELINE -->
+      <section style="background: var(--cream)">
+        <div class="section-label">Our Journey</div>
+        <div class="section-title">Milestones That Define Us</div>
+        <div class="divider"></div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 1rem;
+          "
+        >
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2014</div>
+              <h4>The Beginning</h4>
+              <p>
+                Martins School opens with 22 students and 4 staff in a rented
+                facility on Lagos Abeokuta Express Road, Ifo.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2014</div>
+              <h4>Our Own Campus</h4>
+              <p>
+                We move to our permanent 8, Apase Street campus, housing the
+                full Montessori programme and Primary classes.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2018</div>
+              <h4>Secondary Division Opens</h4>
+              <p>
+                The Junior Secondary School launches with 48 students, meeting
+                overwhelming community demand.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2022</div>
+              <h4>First SS3 Graduating Class</h4>
+              <p>
+                Our inaugural senior secondary class records a 100% WAEC pass
+                rate — a milestone that set our standard.
+              </p>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2019</div>
+              <h4>STEM Lab &amp; Library Wing</h4>
+              <p>
+                A state-of-the-art science, technology, and robotics centre
+                opens alongside an expanded school library.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2021</div>
+              <h4>AMI Montessori Certification</h4>
+              <p>
+                Martins School becomes the first AMI-affiliated Montessori
+                school in Ogun State.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2023</div>
+              <h4>Second Campus Opens</h4>
+              <p>
+                A second campus expands capacity to serve the growing Ifo and
+                Ewekoro communities.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2024</div>
+              <h4>10 Years of Excellence</h4>
+              <p>
+                We celebrate a decade of shaping futures — 600+ students, 45+
+                staff, and a legacy that grows each year.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISION & MISSION -->
+      <section>
+        <div class="section-label">Our Purpose</div>
+        <div class="section-title">What Drives Us</div>
+        <div class="divider"></div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+          "
+        >
+          <div class="vision-card dark">
+            <div class="section-label">Vision</div>
+            <h3>Our Vision</h3>
+            <p>
+              To be the leading school in West Africa where every child —
+              regardless of background — reaches their fullest potential in a
+              nurturing, stimulating environment.
+            </p>
+          </div>
+          <div class="vision-card">
+            <div class="section-label">Mission</div>
+            <h3>Our Mission</h3>
+            <p>
+              To deliver outstanding Montessori and Secondary education that
+              develops confident, compassionate, and academically excellent
+              young people who are ready to lead in a changing world.
+            </p>
+          </div>
+        </div>
+
+        <!-- Core Values Cards -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+          "
+        >
+          <div class="card">
+            <div class="card-icon">⭐</div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Excellence
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              We set high standards and celebrate every milestone of
+              achievement.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🌿</div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Integrity
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              Honesty and ethical conduct are the foundation of everything we
+              do.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💡</div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Curiosity
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              We cultivate a love of questions, discovery, and lifelong
+              learning.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon">❤️</div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Community
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              We are a family — students, staff, and parents working as one.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section style="background: var(--cream)">
+        <div class="section-label">Our People</div>
+        <div class="section-title">Meet Our Leadership Team</div>
+        <div class="divider"></div>
+        <p class="section-sub">
+          Our school is led by experienced, passionate educators who bring
+          decades of expertise and a deep commitment to student success.
+        </p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="img/team-barakat.png" alt="Mrs. Barakat Akinwunmi" />
+            </div>
+            <h4>Mrs. Barakat Akinwunmi</h4>
+            <p>Head of School</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background: var(--green-mid)">
+              JO
+            </div>
+            <h4>Mr. James Okonkwo</h4>
+            <p>Deputy Principal</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background: #3a7055">FB</div>
+            <h4>Mrs. Fatima Balogun</h4>
+            <p>Montessori Lead</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background: #c4973c">TN</div>
+            <h4>Mr. Taiwo Nwachukwu</h4>
+            <p>Secondary HOD</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background: var(--green)">AA</div>
+            <h4>Mrs. Ada Eze</h4>
+            <p>Admissions Officer</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="img/team-ibrahim.png" alt="Mrs. Ibrahim Akinwunmi" />
+            </div>
+            <h4>Mr. Ibrahim Akinwunmi</h4>
+            <p>Founder &amp; Board Chair</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FACILITIES -->
+      <section>
+        <div class="section-label">Our Campus</div>
+        <div class="section-title">World-Class Facilities</div>
+        <div class="divider"></div>
+        <p class="section-sub">
+          Every corner of Martins School is designed to inspire — from our
+          Montessori classrooms to our senior secondary science labs.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+          "
+        >
+          <div class="card">
+            <div class="card-icon" style="background: var(--green-pale)">
+              🔬
+            </div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Science &amp; STEM Labs
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              Fully equipped physics, chemistry, biology, and robotics labs for
+              secondary students.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" style="background: var(--gold-pale)">📚</div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Library &amp; Resource Centre
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              Over 8,000 volumes plus digital research tools and quiet study
+              spaces.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" style="background: var(--cream-dark)">
+              ⚽
+            </div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Sports &amp; Recreation
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              Football pitch, basketball courts, athletics track, and indoor
+              multipurpose hall.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" style="background: var(--green-pale)">
+              🎨
+            </div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Arts &amp; Music Studio
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              Dedicated visual arts studio and music room with instruments for
+              all levels.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" style="background: var(--gold-pale)">💻</div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              ICT Centre
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              60-station computer lab with high-speed internet for coding,
+              research, and digital literacy.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" style="background: var(--cream-dark)">
+              🍽️
+            </div>
+            <h3
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--green);
+                margin-bottom: 6px;
+              "
+            >
+              Cafeteria &amp; Nutrition
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.6;
+              "
+            >
+              Nutritious, freshly prepared meals daily — catering to dietary
+              needs and healthy habits.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADERSHIP MESSAGE CTA -->
+      <section style="background: var(--cream); padding: 4rem 4rem 3rem">
+        <div style="max-width: 640px">
+          <div class="section-label" style="color: var(--gold)">Leadership</div>
+          <div class="section-title" style="color: var(--green)">
+            A Message from<br />Our Head of School
+          </div>
+          <div class="divider"></div>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 15px;
+              line-height: 1.8;
+              margin-bottom: 1rem;
+            "
+          >
+            Every child who walks through our doors brings a unique
+            constellation of talents. Our faculty and staff are deeply committed
+            to uncovering those gifts and helping each student shine. Education
+            at Martins School is not a transaction — it is a relationship, a
+            partnership between school, student, and family.
+          </p>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 15px;
+              line-height: 1.8;
+              margin-bottom: 2rem;
+            "
+          >
+            I warmly invite you to visit us, ask questions, and become part of
+            our extraordinary community.
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a href="contact.html" class="btn-gold">Get in Touch</a>
+            <a href="admissions.html" class="btn-outline">Apply Today</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-brand">
+          <div class="nav-logo-text">Martins School</div>
+          <p>
+            Montessori &amp; Secondary Education<br />100 >8, Apase Street, Ifo,
+            Nigeria
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div>
+          <h4>Programmes</h4>
+          <a href="montessori.html">Montessori</a>
+          <a href="secondary.html">Secondary School</a>
+          <a href="admissions.html">Admissions</a>
+        </div>
+        <div>
+          <h4>School</h4>
+          <a href="about.html">About Us</a>
+          <a href="news.html">News &amp; Events</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <p>8, Apase Street,<br />Ifo, Ogun State</p>
+          <p>+234 703 990 9900</p>
+          <p>info@martinsschool.edu.ng</p>
+        </div>
+      </footer>
+      <div class="footer-bottom">
+        <span>© 2025 Martins School. All rights reserved.</span>
+        <span>Ifo, Nigeria</span>
+      </div>
+      <script src="script.js"></script>
+    </div>
+    <a href="#home" class="scroll-top" id="scroll-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </body>
+</html>
