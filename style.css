@@ -334,14 +334,14 @@ nav.scrolled {
 
 .btn-ghost {
   font-size: 13px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
+  color: var(--green);
   background: transparent;
   padding: 12px 30px;
   border-radius: var(--radius);
   text-decoration: none;
   letter-spacing: 0.4px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(26, 60, 46, 0.4);
   transition:
     background var(--transition),
     border-color var(--transition);
@@ -349,8 +349,8 @@ nav.scrolled {
   white-space: nowrap;
 }
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(26, 60, 46, 0.08);
+  border-color: var(--green);
 }
 
 .link-arrow {
@@ -2953,7 +2953,7 @@ footer p {
   .news-article-row {
     grid-template-columns: 1fr;
   }
-} 
+}
 
 /* =============================================
    PRINT STYLES
