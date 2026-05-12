@@ -151,7 +151,7 @@ document
     if (query) {
       const pages = {
         montessori: "montessori.html",
-        kindergarten: "montessori.html",
+        Primary: "montessori.html",
         toddler: "montessori.html",
         secondary: "secondary.html",
         jss: "secondary.html",
@@ -171,6 +171,9 @@ document
         event: "news.html",
         Contact: "contact.html",
         programme: "admissions.html",
+        mission: "about.html",
+        vision: "about.html",
+        leadership: "about.html",
         programmes: "admissions.html",
       };
 
